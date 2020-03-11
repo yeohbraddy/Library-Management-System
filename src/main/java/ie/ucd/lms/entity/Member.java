@@ -1,15 +1,14 @@
 package ie.ucd.lms.entity;
 
-import javax.validation.constraints.NotEmpty;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import org.springframework.security.core.parameters.P;
-
+import ie.ucd.lms.service.Common;
 import java.time.*;
 import java.util.List;
 import javax.persistence.*;
-import ie.ucd.lms.service.Common;
+import javax.validation.constraints.NotEmpty;
+
+
+
 
 @Entity
 @Table(name = "members")
@@ -221,6 +220,7 @@ public class Member {
     this.roles = roles;
   }
 
+  @Override
   public String toString() {
     String buf = " - ";
     return id + buf + fullName + buf + getInitials() + buf + processLastActiveOn() + buf + email + buf + mobileNumber

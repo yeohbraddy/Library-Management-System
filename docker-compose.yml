@@ -16,9 +16,11 @@ services:
       - db
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/library
-      SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root
+      SPRING_DATASOURCE_USERNAME: test
+      SPRING_DATASOURCE_PASSWORD: test
   db:
+    ports:
+      - 3309:3306
     image: mysql:latest
     # restart: on-failure
     # command: mysqld --character-set-server=utf8 --collation-server=utf8_unicode_ci --default-authentication-plugin=mysql_native_password
